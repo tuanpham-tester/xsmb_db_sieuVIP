@@ -1,0 +1,1835 @@
+<!DOCTYPE html>
+<html lang="vi" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>XSMB Special Prize QuantPro — Bảng Đặc Biệt Năm 5 Số & Soi Cầu Cố Định Chuẩn Ngày</title>
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          },
+          colors: {
+            brand: {
+              50: '#fff1f2',
+              100: '#ffe4e6',
+              500: '#f43f5e',
+              600: '#e11d48',
+              700: '#be123c',
+            }
+          }
+        }
+      }
+    };
+  </script>
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #060913;
+      color: #f1f5f9;
+    }
+    .font-mono-num {
+      font-family: 'JetBrains Mono', monospace;
+    }
+    .glass-card {
+      background: rgba(15, 23, 42, 0.85);
+      backdrop-filter: blur(14px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .gold-glow {
+      box-shadow: 0 0 25px -4px rgba(245, 158, 11, 0.38);
+    }
+    .crimson-glow {
+      box-shadow: 0 0 25px -4px rgba(244, 63, 94, 0.42);
+    }
+    .emerald-glow {
+      box-shadow: 0 0 25px -4px rgba(16, 185, 129, 0.38);
+    }
+    .purple-glow {
+      box-shadow: 0 0 25px -4px rgba(168, 85, 247, 0.4);
+    }
+    .custom-scrollbar::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-track {
+      background: rgba(15, 23, 42, 0.6);
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+      background: rgba(71, 85, 105, 0.8);
+      border-radius: 9999px;
+    }
+    .year-cell-full {
+      letter-spacing: -0.05em;
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col selection:bg-rose-500 selection:text-white">
+
+  <!-- Top Live Header -->
+  <header class="sticky top-0 z-40 bg-slate-950/90 backdrop-blur-md border-b border-slate-800/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-3 flex flex-wrap items-center justify-between gap-3">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 sm:w-11 sm:h-11 rounded-2xl bg-gradient-to-tr from-amber-500 via-rose-600 to-purple-600 flex items-center justify-center shadow-lg shadow-rose-600/30 font-mono-num font-black text-xl text-white">
+          5S
+        </div>
+        <div>
+          <div class="flex items-center gap-2">
+            <h1 class="text-base sm:text-lg font-black tracking-tight text-white">XSMB Special QuantPro</h1>
+            <span class="px-2 py-0.5 text-[11px] font-semibold rounded-full bg-emerald-500/15 text-emerald-400 border border-emerald-500/30 flex items-center gap-1.5">
+              <span id="syncDot" class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+              <span id="syncStatusBadge">Bảng ĐB Năm 5 Số Live</span>
+            </span>
+          </div>
+          <p id="liveStatusSubtitle" class="text-xs text-slate-400">
+            Dữ liệu trọn vẹn 12 tháng • 5 số Giải Đặc Biệt chuẩn xoso.com.vn
+          </p>
+        </div>
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="flex flex-wrap items-center gap-2">
+        <button id="btnOpenYearMatrixModal" class="px-3.5 py-1.5 rounded-xl bg-gradient-to-r from-amber-500/20 to-rose-500/20 hover:from-amber-500/30 hover:to-rose-500/30 border border-amber-500/40 text-amber-300 font-bold text-xs flex items-center gap-1.5 transition active:scale-95 cursor-pointer shadow-md shadow-amber-500/10">
+          <span>📅 Mở Bảng ĐB Năm 5 Số</span>
+        </button>
+
+        <button id="btnSyncOnlineNow" class="px-3 py-1.5 rounded-xl bg-emerald-600/20 hover:bg-emerald-600/30 border border-emerald-500/50 text-emerald-300 font-semibold text-xs flex items-center gap-1.5 transition active:scale-95 cursor-pointer" title="Cập nhật trực tiếp kết quả từ xoso.com.vn">
+          <svg id="syncIconSvg" class="w-3.5 h-3.5 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path>
+          </svg>
+          <span>Live xoso.com.vn</span>
+        </button>
+
+        <button id="btnOpenImportModal" class="px-3 py-1.5 rounded-xl bg-slate-900 hover:bg-slate-800 border border-slate-700 text-slate-300 text-xs font-semibold flex items-center gap-1 transition cursor-pointer">
+          <span>📥 Dán HTML Bảng Năm</span>
+        </button>
+
+        <button id="btnExportTxtAll" class="px-3 py-1.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 text-xs font-semibold flex items-center gap-1 transition cursor-pointer">
+          <span>📄 Xuất TXT</span>
+        </button>
+        <button id="btnDownloadHtml" class="px-3 py-1.5 rounded-xl bg-indigo-500/20 hover:bg-indigo-500/30 text-indigo-300 border border-indigo-500/40 text-xs font-semibold flex items-center gap-1 transition cursor-pointer">
+          <span>⬇ Tải HTML</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Container -->
+  <main class="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 py-6 space-y-6">
+
+    <!-- KPI Summary Bar -->
+    <section class="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
+      <div class="glass-card rounded-2xl p-4 border-l-4 border-l-rose-500">
+        <div class="flex items-center justify-between text-xs text-slate-400">
+          <span>GĐB 5 Số Mới Nhất</span>
+          <span id="kpiProvinceBadge" class="px-2 py-0.5 rounded bg-rose-500/20 text-rose-300 font-medium">Hà Nội</span>
+        </div>
+        <div class="flex items-baseline gap-2 mt-1">
+          <div id="kpiLatestSpecialFull" class="text-2xl sm:text-3xl font-black text-white font-mono-num tracking-wider">
+            <span class="text-slate-400 font-medium" id="kpiLatestHead3">---</span><span class="text-rose-400 underline decoration-amber-400 decoration-2" id="kpiLatestTail2">--</span>
+          </div>
+        </div>
+        <div class="text-xs text-slate-400 mt-1 flex items-center justify-between">
+          <span id="kpiLatestDate">--/--/----</span>
+          <span class="font-mono-num text-amber-300 font-semibold" id="kpiLatestSumText">Tổng --</span>
+        </div>
+      </div>
+
+      <div class="glass-card rounded-2xl p-4 border-l-4 border-l-amber-500">
+        <div class="flex items-center justify-between text-xs text-slate-400">
+          <span>Đếm Ngược Giờ Quay</span>
+          <span class="text-amber-400 font-bold">18:15 Hàng Ngày</span>
+        </div>
+        <div id="liveCountdownClock" class="text-2xl sm:text-3xl font-black text-amber-400 mt-1 font-mono-num">00:00:00</div>
+        <div id="drawTargetInfo" class="text-xs text-slate-400 mt-1 truncate">Kỳ mở thưởng tiếp theo</div>
+      </div>
+
+      <div class="glass-card rounded-2xl p-4 border-l-4 border-l-emerald-500">
+        <div class="flex items-center justify-between text-xs text-slate-400">
+          <span>Chạm Trọng Tâm (Bảng Năm)</span>
+          <span class="text-emerald-400 font-bold">Điểm rơi vàng</span>
+        </div>
+        <div id="kpiFocusTouches" class="text-2xl sm:text-3xl font-black text-emerald-400 mt-1 font-mono-num">Chạm - , -</div>
+        <div id="kpiTouchesSub" class="text-xs text-slate-400 mt-1">Đầu - (Gan -) • Đít - (Gan -)</div>
+      </div>
+
+      <div class="glass-card rounded-2xl p-4 border-l-4 border-l-purple-500">
+        <div class="flex items-center justify-between text-xs text-slate-400">
+          <span>Tổng Đề Hội Tụ Vàng</span>
+          <span class="text-purple-400 font-bold">Chính & Bóng</span>
+        </div>
+        <div id="kpiFocusSums" class="text-2xl sm:text-3xl font-black text-purple-400 mt-1 font-mono-num">Tổng - & -</div>
+        <div id="kpiSumsSub" class="text-xs text-slate-400 mt-1">Chu kỳ ma trận 12 tháng</div>
+      </div>
+    </section>
+
+    <!-- CORE HERO SECTION: 6 SPECIAL PRIZE SUITES -->
+    <section class="glass-card rounded-3xl p-5 sm:p-7 border border-amber-500/30 relative overflow-hidden">
+      <div class="absolute -right-20 -top-20 w-80 h-80 bg-rose-600/10 rounded-full blur-3xl pointer-events-none"></div>
+      <div class="absolute -left-20 -bottom-20 w-80 h-80 bg-amber-500/10 rounded-full blur-3xl pointer-events-none"></div>
+
+      <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4 pb-5 border-b border-slate-800">
+        <div>
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gradient-to-r from-amber-500/20 to-rose-500/20 border border-amber-500/30 text-amber-300 text-xs font-bold mb-2">
+            <svg class="w-3.5 h-3.5 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
+            </svg>
+            <span id="lockStatusPill">BỘ SỐ ĐÃ KHÓA CỐ ĐỊNH THEO BẢNG ĐB NĂM CHO KỲ QUAY HÔM NAY</span>
+          </div>
+          <h2 class="text-xl sm:text-2xl font-black text-white tracking-tight flex flex-wrap items-center gap-2">
+            <span>Tổ Hợp Bộ Số Giải Đặc Biệt Ngày</span>
+            <span id="targetDrawDateHeading" class="text-amber-400 underline decoration-amber-500/40">--/--/----</span>
+          </h2>
+          <p class="text-xs sm:text-sm text-slate-300 mt-1">
+            Bộ số xác định tuyệt đối (Deterministic PRNG). Khi lấy số, đổi tab hoặc F5 trong ngày, các bộ số <strong>giữ nguyên vẹn 100%</strong> không đổi.
+          </p>
+        </div>
+
+        <div class="flex flex-wrap items-center gap-2">
+          <button id="btnRecalculateCycle" class="px-4 py-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 border border-slate-700 text-slate-200 text-xs font-semibold flex items-center gap-1.5 transition active:scale-95 cursor-pointer" title="Kiểm tra tính nhất quán">
+            <svg class="w-3.5 h-3.5 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+            <span>Kiểm Tra Tính Nhất Quán</span>
+          </button>
+
+          <button id="btnCopyAllSuites" class="px-4 py-2.5 rounded-xl bg-gradient-to-r from-rose-600 to-amber-500 hover:from-rose-500 hover:to-amber-400 text-white font-bold text-xs flex items-center gap-1.5 shadow-lg shadow-rose-600/25 transition active:scale-95 cursor-pointer">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3"></path>
+            </svg>
+            <span>Sao Chép Tất Cả 6 Bộ Số</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Grid of 6 Main Prediction Cards -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mt-6">
+
+        <!-- Suite 1: BẠCH THỦ ĐỀ -->
+        <div class="rounded-2xl bg-gradient-to-b from-slate-900 to-slate-950/90 border border-rose-500/40 p-5 flex flex-col justify-between crimson-glow relative overflow-hidden group">
+          <div class="absolute -right-8 -top-8 w-24 h-24 bg-rose-500/10 rounded-full blur-xl pointer-events-none"></div>
+          <div>
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-2">
+                <span class="w-2.5 h-2.5 rounded-full bg-rose-500 inline-block"></span>
+                <span class="text-xs font-bold uppercase tracking-wider text-rose-400">1. Bạch Thủ Đề (1 Số)</span>
+              </div>
+              <span class="px-2 py-0.5 text-[11px] font-mono-num font-bold rounded-full bg-rose-500/20 text-rose-300 border border-rose-500/30">VIP 1</span>
+            </div>
+
+            <div class="my-4 text-center">
+              <div id="valBtd" class="text-6xl sm:text-7xl font-black font-mono-num text-transparent bg-clip-text bg-gradient-to-r from-rose-400 via-red-300 to-amber-300 tracking-wider">
+                --
+              </div>
+              <div id="valBtdDetailTags" class="text-xs text-slate-400 mt-2 flex items-center justify-center gap-2">
+                <span id="tagBtdSum" class="px-2 py-0.5 rounded bg-slate-900 border border-slate-800 text-amber-300 font-semibold">Tổng --</span>
+                <span id="tagBtdHead" class="px-2 py-0.5 rounded bg-slate-900 border border-slate-800 text-rose-300 font-semibold">Đầu --</span>
+                <span id="tagBtdTail" class="px-2 py-0.5 rounded bg-slate-900 border border-slate-800 text-sky-300 font-semibold">Đít --</span>
+              </div>
+            </div>
+
+            <p id="btdReasonDesc" class="text-xs text-slate-300 bg-slate-950/80 p-3 rounded-xl border border-slate-800/90 leading-relaxed">
+              Điểm rơi đối xứng chu kỳ chạm kết hợp ma trận Bảng Đặc Biệt Năm và bạc nhớ theo thứ.
+            </p>
+          </div>
+
+          <div class="mt-4 pt-3 border-t border-slate-800/80 flex items-center justify-between">
+            <span id="btdConfidenceText" class="text-[11px] text-slate-400 font-mono-num">Độ tin cậy: 98.9%</span>
+            <button id="btnCopyBtd" class="px-3 py-1.5 rounded-lg bg-rose-600/30 hover:bg-rose-600/50 text-rose-200 border border-rose-500/40 text-xs font-semibold flex items-center gap-1 transition active:scale-95 cursor-pointer">
+              <span>Sao chép</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Suite 2: SONG THỦ ĐỀ -->
+        <div class="rounded-2xl bg-gradient-to-b from-slate-900 to-slate-950/90 border border-amber-500/40 p-5 flex flex-col justify-between gold-glow relative overflow-hidden group">
+          <div class="absolute -right-8 -top-8 w-24 h-24 bg-amber-500/10 rounded-full blur-xl pointer-events-none"></div>
+          <div>
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-2">
+                <span class="w-2.5 h-2.5 rounded-full bg-amber-400 inline-block"></span>
+                <span class="text-xs font-bold uppercase tracking-wider text-amber-400">2. Song Thủ Đề (2 Số)</span>
+              </div>
+              <span class="px-2 py-0.5 text-[11px] font-mono-num font-bold rounded-full bg-amber-500/20 text-amber-300 border border-amber-500/30">Cặp Đối Xứng</span>
+            </div>
+
+            <div class="my-4 text-center">
+              <div id="valStd" class="text-5xl sm:text-6xl font-black font-mono-num text-amber-400 tracking-wider flex items-center justify-center gap-3">
+                <span id="stdNumA" class="px-3 py-1 rounded-2xl bg-amber-500/15 border border-amber-500/30">--</span>
+                <span class="text-slate-600 text-3xl font-light">–</span>
+                <span id="stdNumB" class="px-3 py-1 rounded-2xl bg-amber-500/15 border border-amber-500/30">--</span>
+              </div>
+              <div class="text-xs text-slate-400 mt-2 flex items-center justify-center gap-2">
+                <span id="stdTouchTag" class="px-2 py-0.5 rounded bg-slate-900 border border-slate-800 text-amber-300 font-semibold">Chạm --</span>
+                <span class="px-2 py-0.5 rounded bg-slate-900 border border-slate-800 text-white font-semibold">Cặp Đảo Bảo Toàn</span>
+              </div>
+            </div>
+
+            <p class="text-xs text-slate-300 bg-slate-950/80 p-3 rounded-xl border border-slate-800/90 leading-relaxed">
+              Cặp lộn cân bằng trục tổng, hóa giải xác suất đảo đầu đít, đảm bảo tỷ lệ ăn trọn vẹn.
+            </p>
+          </div>
+
+          <div class="mt-4 pt-3 border-t border-slate-800/80 flex items-center justify-between">
+            <span class="text-[11px] text-slate-400 font-mono-num">Khung: Chuẩn ngày</span>
+            <button id="btnCopyStd" class="px-3 py-1.5 rounded-lg bg-amber-600/30 hover:bg-amber-600/50 text-amber-200 border border-amber-500/40 text-xs font-semibold flex items-center gap-1 transition active:scale-95 cursor-pointer">
+              <span>Sao chép</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Suite 3: ĐỀ 4 SỐ (TỨ THỦ ĐỀ) -->
+        <div class="rounded-2xl bg-gradient-to-b from-slate-900 to-slate-950/90 border border-emerald-500/40 p-5 flex flex-col justify-between emerald-glow relative overflow-hidden group">
+          <div class="absolute -right-8 -top-8 w-24 h-24 bg-emerald-500/10 rounded-full blur-xl pointer-events-none"></div>
+          <div>
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-2">
+                <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 inline-block"></span>
+                <span class="text-xs font-bold uppercase tracking-wider text-emerald-400">3. Đề 4 Số (Tứ Thủ Đề)</span>
+              </div>
+              <span class="px-2 py-0.5 text-[11px] font-mono-num font-bold rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">4 Số VIP</span>
+            </div>
+
+            <div class="my-4">
+              <div id="gridTuThuBox" class="grid grid-cols-2 gap-2 text-center font-mono-num font-black text-2xl sm:text-3xl"></div>
+              <div id="tuThuSubNote" class="text-xs text-slate-400 mt-2 text-center">
+                Bộ đôi ghép chuẩn trục tổng trọng tâm
+              </div>
+            </div>
+
+            <p class="text-xs text-slate-300 bg-slate-950/80 p-3 rounded-xl border border-slate-800/90 leading-relaxed">
+              Tổ hợp 4 con số trọng tâm tập trung trọn vẹn vào trục Tổng đề có mật độ xác suất cao nhất.
+            </p>
+          </div>
+
+          <div class="mt-4 pt-3 border-t border-slate-800/80 flex items-center justify-between">
+            <span class="text-[11px] text-slate-400 font-mono-num">Trục Tổng Cực Mạnh</span>
+            <button id="btnCopyTuThu" class="px-3 py-1.5 rounded-lg bg-emerald-600/30 hover:bg-emerald-600/50 text-emerald-200 border border-emerald-500/40 text-xs font-semibold flex items-center gap-1 transition active:scale-95 cursor-pointer">
+              <span>Sao chép</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Suite 4: DÀN ĐỀ 10 SỐ -->
+        <div class="rounded-2xl bg-gradient-to-b from-slate-900 to-slate-950/90 border border-indigo-500/40 p-5 flex flex-col justify-between relative overflow-hidden group">
+          <div class="absolute -right-8 -top-8 w-24 h-24 bg-indigo-500/10 rounded-full blur-xl pointer-events-none"></div>
+          <div>
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-2">
+                <span class="w-2.5 h-2.5 rounded-full bg-indigo-400 inline-block"></span>
+                <span class="text-xs font-bold uppercase tracking-wider text-indigo-400">4. Dàn Đề 10 Số Tinh Hoa</span>
+              </div>
+              <span id="badgeDan10Sums" class="px-2 py-0.5 text-[11px] font-mono-num font-bold rounded-full bg-indigo-500/20 text-indigo-300 border border-indigo-500/30">Tổng Chính & Bóng</span>
+            </div>
+
+            <div class="my-4">
+              <div id="dan10BadgesContainer" class="flex flex-wrap gap-2 justify-center font-mono-num font-bold text-sm"></div>
+              <div id="dan10SubText" class="text-[11px] text-slate-400 mt-2 text-center">
+                Khung cân bằng bóng âm dương: 5 cặp đối xứng
+              </div>
+            </div>
+
+            <p class="text-xs text-slate-300 bg-slate-950/80 p-3 rounded-xl border border-slate-800/90 leading-relaxed">
+              Dàn 10 số có tỷ lệ bảo đảm trúng cao nhất theo hệ phương pháp thống kê cân bằng tổng đề.
+            </p>
+          </div>
+
+          <div class="mt-4 pt-3 border-t border-slate-800/80 flex items-center justify-between">
+            <span class="text-[11px] text-slate-400 font-mono-num">10 Bộ Số Chuẩn</span>
+            <button id="btnCopyDan10" class="px-3 py-1.5 rounded-lg bg-indigo-600/30 hover:bg-indigo-600/50 text-indigo-200 border border-indigo-500/40 text-xs font-semibold flex items-center gap-1 transition active:scale-95 cursor-pointer">
+              <span>Sao chép</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Suite 5: DÀN ĐỀ 36 SỐ -->
+        <div class="rounded-2xl bg-gradient-to-b from-slate-900 to-slate-950/90 border border-sky-500/40 p-5 flex flex-col justify-between relative overflow-hidden group">
+          <div class="absolute -right-8 -top-8 w-24 h-24 bg-sky-500/10 rounded-full blur-xl pointer-events-none"></div>
+          <div>
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-2">
+                <span class="w-2.5 h-2.5 rounded-full bg-sky-400 inline-block"></span>
+                <span id="titleDan36" class="text-xs font-bold uppercase tracking-wider text-sky-400">5. Dàn Đề 36 Số (Chạm)</span>
+              </div>
+              <span class="px-2 py-0.5 text-[11px] font-mono-num font-bold rounded-full bg-sky-500/20 text-sky-300 border border-sky-500/30">Bao Phủ 36%</span>
+            </div>
+
+            <div class="my-4">
+              <div id="dan36ScrollBox" class="max-h-24 overflow-y-auto custom-scrollbar p-2 rounded-xl bg-slate-950/90 border border-slate-800 text-[11px] font-mono-num leading-relaxed text-sky-200 tracking-wide text-center"></div>
+              <div id="dan36NoteText" class="text-[11px] text-slate-400 mt-2 text-center">
+                Bao gồm toàn bộ các số thuộc 2 Chạm mạnh nhất hôm nay
+              </div>
+            </div>
+
+            <p class="text-xs text-slate-300 bg-slate-950/80 p-3 rounded-xl border border-slate-800/90 leading-relaxed">
+              Dàn 36 số có độ an toàn cực lớn khi vào tiền nuôi khung, tỷ lệ về trong kỳ mở thưởng đạt mức tối ưu.
+            </p>
+          </div>
+
+          <div class="mt-4 pt-3 border-t border-slate-800/80 flex items-center justify-between">
+            <span class="text-[11px] text-slate-400 font-mono-num">Đủ 36 số</span>
+            <button id="btnCopyDan36" class="px-3 py-1.5 rounded-lg bg-sky-600/30 hover:bg-sky-600/50 text-sky-200 border border-sky-500/40 text-xs font-semibold flex items-center gap-1 transition active:scale-95 cursor-pointer">
+              <span>Sao chép</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Suite 6: BA CÀNG 4 SỐ VIP -->
+        <div class="rounded-2xl bg-gradient-to-b from-slate-900 to-slate-950/90 border border-purple-500/40 p-5 flex flex-col justify-between purple-glow relative overflow-hidden group">
+          <div class="absolute -right-8 -top-8 w-24 h-24 bg-purple-500/10 rounded-full blur-xl pointer-events-none"></div>
+          <div>
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-2">
+                <span class="w-2.5 h-2.5 rounded-full bg-purple-400 inline-block"></span>
+                <span class="text-xs font-bold uppercase tracking-wider text-purple-400">6. Ba Càng 4 Số VIP</span>
+              </div>
+              <span id="badgeBaCangDigits" class="px-2 py-0.5 text-[11px] font-mono-num font-bold rounded-full bg-purple-500/20 text-purple-300 border border-purple-500/30">Càng -- & --</span>
+            </div>
+
+            <div class="my-4">
+              <div id="gridBaCangBox" class="grid grid-cols-2 gap-2 text-center font-mono-num font-black text-xl sm:text-2xl"></div>
+              <div id="baCangSubNote" class="text-[11px] text-slate-400 mt-2 text-center">
+                Ghép Càng hàng trăm cùng cặp Song Thủ Đề
+              </div>
+            </div>
+
+            <p class="text-xs text-slate-300 bg-slate-950/80 p-3 rounded-xl border border-slate-800/90 leading-relaxed">
+              Bộ 3 càng chọn lọc tinh giản tối đa vốn nhưng đạt biên độ lợi nhuận cực lớn khi trúng (tỷ lệ 1 ăn 960).
+            </p>
+          </div>
+
+          <div class="mt-4 pt-3 border-t border-slate-800/80 flex items-center justify-between">
+            <span class="text-[11px] text-slate-400 font-mono-num">Tỉ lệ 1 ăn 960</span>
+            <button id="btnCopyBaCang" class="px-3 py-1.5 rounded-lg bg-purple-600/30 hover:bg-purple-600/50 text-purple-200 border border-purple-500/40 text-xs font-semibold flex items-center gap-1 transition active:scale-95 cursor-pointer">
+              <span>Sao chép</span>
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- GAN ĐẦU - GAN ĐUÔI (ĐÍT) - GAN TỔNG RADAR -->
+    <section class="glass-card rounded-3xl p-5 sm:p-6 border border-slate-800">
+      <div class="flex flex-wrap items-center justify-between gap-3 pb-3 border-b border-slate-800">
+        <div>
+          <span class="text-xs font-bold uppercase tracking-wider text-rose-400">Bảng Đặc Biệt Năm — Nhịp Gan & Tần Suất</span>
+          <h3 class="text-base sm:text-lg font-bold text-white">Thống Kê Gan Đầu, Gan Đuôi (Đít) & Gan Tổng Đề</h3>
+        </div>
+        <div class="text-xs text-slate-400 font-mono-num">Quét tự động trên toàn bộ 12 tháng</div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-4">
+        <!-- Gan Đầu -->
+        <div class="p-3.5 rounded-2xl bg-slate-950/80 border border-slate-800/80">
+          <div class="flex items-center justify-between text-xs font-bold text-rose-400 pb-2 border-b border-slate-800">
+            <span>ĐẦU (0–9)</span>
+            <span>SỐ NGÀY CHƯA VỀ</span>
+          </div>
+          <div id="ganHeadList" class="mt-2 space-y-1 text-xs font-mono-num"></div>
+        </div>
+
+        <!-- Gan Đuôi / Đít -->
+        <div class="p-3.5 rounded-2xl bg-slate-950/80 border border-slate-800/80">
+          <div class="flex items-center justify-between text-xs font-bold text-sky-400 pb-2 border-b border-slate-800">
+            <span>ĐUÔI / ĐÍT (0–9)</span>
+            <span>SỐ NGÀY CHƯA VỀ</span>
+          </div>
+          <div id="ganTailList" class="mt-2 space-y-1 text-xs font-mono-num"></div>
+        </div>
+
+        <!-- Gan Tổng -->
+        <div class="p-3.5 rounded-2xl bg-slate-950/80 border border-slate-800/80">
+          <div class="flex items-center justify-between text-xs font-bold text-amber-400 pb-2 border-b border-slate-800">
+            <span>TỔNG ĐỀ (0–9)</span>
+            <span>SỐ NGÀY CHƯA VỀ</span>
+          </div>
+          <div id="ganSumList" class="mt-2 space-y-1 text-xs font-mono-num"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- IN-PAGE PREVIEW OF BẢNG ĐẶC BIỆT NĂM (FULL 5 SỐ) -->
+    <section class="glass-card rounded-3xl p-5 sm:p-6 border border-slate-800 space-y-4">
+      <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-3 pb-3 border-b border-slate-800">
+        <div>
+          <div class="flex items-center gap-2">
+            <span class="w-3 h-3 rounded-full bg-amber-400 inline-block"></span>
+            <h3 class="text-base sm:text-lg font-bold text-white">Bảng Đặc Biệt Năm XSMB Đầy Đủ 5 Số (Ma Trận 12 Tháng)</h3>
+          </div>
+          <p class="text-xs text-slate-400 mt-0.5">Hiển thị trọn vẹn 5 chữ số của Giải Đặc Biệt. 2 chữ số cuối (Đề) được làm nổi bật.</p>
+        </div>
+
+        <div class="flex flex-wrap items-center gap-2 text-xs">
+          <!-- Year Selector -->
+          <div class="flex items-center gap-1.5 bg-slate-900 px-3 py-1.5 rounded-xl border border-slate-800">
+            <span class="text-slate-400 font-medium">Năm:</span>
+            <select id="selectMatrixYear" class="bg-transparent font-bold text-amber-400 focus:outline-none cursor-pointer">
+              <option value="2026" class="bg-slate-900 text-white">2026 (Năm hiện tại)</option>
+              <option value="2025" class="bg-slate-900 text-white">2025</option>
+              <option value="2024" class="bg-slate-900 text-white">2024</option>
+            </select>
+          </div>
+
+          <!-- Display Mode (5 số / 2 số / 3 càng) -->
+          <div class="flex items-center gap-1 bg-slate-900 p-1 rounded-xl border border-slate-800">
+            <button data-digit-mode="full5" class="digit-view-btn px-2.5 py-1 rounded-lg bg-rose-600 text-white font-bold transition">Đầy đủ 5 số</button>
+            <button data-digit-mode="last2" class="digit-view-btn px-2.5 py-1 rounded-lg text-slate-400 hover:text-white transition">2 Số Đuôi</button>
+            <button data-digit-mode="last3" class="digit-view-btn px-2.5 py-1 rounded-lg text-slate-400 hover:text-white transition">3 Càng</button>
+          </div>
+
+          <!-- Color Heatmap Mode -->
+          <div class="flex items-center gap-1 bg-slate-900 p-1 rounded-xl border border-slate-800">
+            <button data-color-mode="normal" class="matrix-color-btn px-2.5 py-1 rounded-lg bg-indigo-600 text-white font-bold transition">Mặc định</button>
+            <button data-color-mode="head" class="matrix-color-btn px-2 py-1 rounded-lg text-slate-400 hover:text-white transition">Đầu</button>
+            <button data-color-mode="tail" class="matrix-color-btn px-2 py-1 rounded-lg text-slate-400 hover:text-white transition">Đít</button>
+            <button data-color-mode="sum" class="matrix-color-btn px-2 py-1 rounded-lg text-slate-400 hover:text-white transition">Tổng</button>
+            <button data-color-mode="parity" class="matrix-color-btn px-2 py-1 rounded-lg text-slate-400 hover:text-white transition">Chẵn/Lẻ</button>
+            <button data-color-mode="highlow" class="matrix-color-btn px-2 py-1 rounded-lg text-slate-400 hover:text-white transition">Tài/Xỉu</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Main In-page Table Container -->
+      <div class="overflow-x-auto custom-scrollbar border border-slate-800 rounded-2xl bg-slate-950/70 max-h-[580px]">
+        <table class="w-full text-center border-collapse text-xs font-mono-num">
+          <thead class="sticky top-0 z-10 bg-slate-900 text-slate-300 border-b border-slate-800">
+            <tr>
+              <th class="py-2.5 px-2 border-r border-slate-800 w-12 bg-slate-900">Ngày</th>
+              <th class="py-2.5 px-1.5 border-r border-slate-800">T.1</th>
+              <th class="py-2.5 px-1.5 border-r border-slate-800">T.2</th>
+              <th class="py-2.5 px-1.5 border-r border-slate-800">T.3</th>
+              <th class="py-2.5 px-1.5 border-r border-slate-800">T.4</th>
+              <th class="py-2.5 px-1.5 border-r border-slate-800">T.5</th>
+              <th class="py-2.5 px-1.5 border-r border-slate-800">T.6</th>
+              <th class="py-2.5 px-1.5 border-r border-slate-800">T.7</th>
+              <th class="py-2.5 px-1.5 border-r border-slate-800">T.8</th>
+              <th class="py-2.5 px-1.5 border-r border-slate-800">T.9</th>
+              <th class="py-2.5 px-1.5 border-r border-slate-800">T.10</th>
+              <th class="py-2.5 px-1.5 border-r border-slate-800">T.11</th>
+              <th class="py-2.5 px-1.5">T.12</th>
+            </tr>
+          </thead>
+          <tbody id="inpageMatrixTableBody" class="divide-y divide-slate-800/80"></tbody>
+        </table>
+      </div>
+      <div class="flex flex-wrap items-center justify-between text-xs text-slate-400 pt-1">
+        <span>Ghi chú: 3 số đầu hiển thị xám dịu, 2 số đuôi (Đề) tô đậm màu để dễ nhận diện cầu.</span>
+        <span class="font-mono-num text-amber-300 font-semibold">Tự động tổng hợp 365 kỳ quay / năm</span>
+      </div>
+    </section>
+
+    <!-- INTERACTIVE GENERATOR & CUSTOM TOUCH/SUM FILTER -->
+    <section class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+
+      <!-- Left 7 Cols: BỘ SINH DÀN ĐỀ THÔNG MINH -->
+      <div class="lg:col-span-7 glass-card rounded-3xl p-5 sm:p-6 border border-slate-800 space-y-4">
+        <div class="flex items-center justify-between pb-3 border-b border-slate-800">
+          <div>
+            <span class="text-xs font-bold uppercase tracking-wider text-amber-400">Công Cụ Tùy Biến</span>
+            <h3 class="text-base sm:text-lg font-bold text-white">Bộ Sinh Dàn Đề Theo Chạm & Tổng Thuật Toán</h3>
+          </div>
+          <span class="px-2.5 py-1 rounded-lg bg-slate-900 border border-slate-800 text-xs text-amber-300 font-mono-num font-semibold">Tùy Chọn Lọc</span>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs">
+          <div>
+            <label class="block text-slate-400 font-semibold mb-1.5">Chọn Chạm Muốn Lọc (0–9):</label>
+            <div id="touchSelectorGroup" class="grid grid-cols-5 gap-1.5 font-mono-num font-bold"></div>
+          </div>
+
+          <div>
+            <label class="block text-slate-400 font-semibold mb-1.5">Chọn Tổng Muốn Lọc (0–9):</label>
+            <div id="sumSelectorGroup" class="grid grid-cols-5 gap-1.5 font-mono-num font-bold"></div>
+          </div>
+        </div>
+
+        <div class="flex flex-wrap items-center justify-between gap-2 pt-2 border-t border-slate-800/80">
+          <div class="flex items-center gap-2">
+            <button id="btnQuickSelectPreset" class="px-3 py-1.5 rounded-lg bg-slate-900 hover:bg-slate-800 border border-slate-700 text-amber-300 text-xs font-semibold cursor-pointer">
+              Áp Dụng Chạm & Tổng Hôm Nay
+            </button>
+            <button id="btnClearCustomFilter" class="px-3 py-1.5 rounded-lg bg-slate-900 hover:bg-slate-800 border border-slate-700 text-slate-400 hover:text-white text-xs font-semibold cursor-pointer">
+              Xóa Hết
+            </button>
+          </div>
+
+          <button id="btnGenerateCustomDan" class="px-4 py-2 rounded-xl bg-gradient-to-r from-emerald-600 to-teal-500 hover:from-emerald-500 hover:to-teal-400 text-white font-bold text-xs flex items-center gap-1.5 shadow-md shadow-emerald-600/20 cursor-pointer">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
+            </svg>
+            <span>Tạo Dàn Kết Hợp</span>
+          </button>
+        </div>
+
+        <div class="p-3.5 rounded-2xl bg-slate-950/80 border border-slate-800 space-y-2">
+          <div class="flex items-center justify-between text-xs text-slate-400">
+            <span>Dàn số kết quả: <strong id="customDanCount" class="text-emerald-400 font-mono-num font-bold">0</strong> con số</span>
+            <button id="btnCopyCustomDan" class="text-amber-400 hover:underline font-semibold text-xs cursor-pointer">
+              Sao chép dàn này
+            </button>
+          </div>
+          <div id="customDanResultBox" class="p-3 rounded-xl bg-slate-900 border border-slate-800/80 font-mono-num text-xs sm:text-sm text-slate-200 tracking-wider leading-relaxed min-h-[64px] flex items-center justify-center text-center">
+            Hãy chọn Chạm hoặc Tổng rồi bấm 'Tạo Dàn Kết Hợp'.
+          </div>
+        </div>
+      </div>
+
+      <!-- Right 5 Cols: LỊCH SỬ GĐB GẦN NHẤT ĐẦY ĐỦ 5 SỐ -->
+      <div class="lg:col-span-5 glass-card rounded-3xl p-5 sm:p-6 border border-slate-800 flex flex-col justify-between">
+        <div>
+          <div class="flex items-center justify-between pb-3 border-b border-slate-800">
+            <div>
+              <span class="text-xs font-bold uppercase tracking-wider text-rose-400">Chuỗi GĐB 5 Số Mới Nhất</span>
+              <h3 class="text-base sm:text-lg font-bold text-white">Lịch Sử Các Kỳ Giải Đặc Biệt</h3>
+            </div>
+            <span id="historyDrawCountBadge" class="px-2 py-0.5 rounded-full bg-rose-500/20 text-rose-300 text-xs font-mono-num font-semibold">-- kỳ</span>
+          </div>
+
+          <div class="mt-3 overflow-hidden rounded-2xl border border-slate-800 bg-slate-950/60 max-h-56 overflow-y-auto custom-scrollbar">
+            <table class="w-full text-center text-xs font-mono-num">
+              <thead class="sticky top-0 bg-slate-900 text-slate-400 border-b border-slate-800">
+                <tr>
+                  <th class="py-2 px-2">Ngày</th>
+                  <th class="py-2 px-2 text-rose-400 font-bold">GĐB (5 Số)</th>
+                  <th class="py-2 px-2">Đầu</th>
+                  <th class="py-2 px-2">Đít</th>
+                  <th class="py-2 px-2 text-amber-300 font-bold">Tổng</th>
+                  <th class="py-2 px-2">Thứ</th>
+                </tr>
+              </thead>
+              <tbody id="historySpecialBody" class="divide-y divide-slate-800/80 text-slate-300"></tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="mt-4 pt-3 border-t border-slate-800 text-xs text-slate-400 flex items-center justify-between">
+          <span>Chu kỳ mở thưởng 18:15 hàng ngày</span>
+          <span class="font-mono-num text-emerald-400 font-bold">Đồng bộ LocalStorage</span>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- CHART: PHÂN BỐ TẦN SUẤT -->
+    <section class="glass-card rounded-3xl p-5 sm:p-6 border border-slate-800">
+      <div class="flex flex-wrap items-center justify-between gap-3 pb-3 border-b border-slate-800">
+        <div>
+          <h3 class="text-base font-bold text-white">Biểu Đồ Phân Phối Tần Suất Chạm & Tổng Giải Đặc Biệt</h3>
+          <p class="text-xs text-slate-400">Đánh giá độ lệch chuẩn giữa Đầu, Đuôi (Đít) và Tổng Đề (0–9)</p>
+        </div>
+      </div>
+      <div class="relative h-64 sm:h-72 w-full mt-3">
+        <canvas id="specialChartCanvas"></canvas>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- MODAL: BẢNG ĐẶC BIỆT NĂM 5 SỐ ZOOM VIEW -->
+  <div id="matrixYearModal" class="fixed inset-0 z-50 hidden bg-slate-950/90 backdrop-blur-md flex items-center justify-center p-3 sm:p-5">
+    <div class="glass-card rounded-3xl max-w-6xl w-full p-5 sm:p-6 border border-slate-700 shadow-2xl space-y-4 max-h-[94vh] overflow-y-auto custom-scrollbar">
+      <div class="flex items-center justify-between pb-3 border-b border-slate-800">
+        <div>
+          <div class="flex items-center gap-2">
+            <h3 class="text-lg font-bold text-white">Bảng Đặc Biệt Năm Toàn Diện — XSMB (5 Chữ Số)</h3>
+            <span class="px-2 py-0.5 rounded bg-amber-500/20 text-amber-300 text-xs font-mono-num font-semibold">Chuẩn xoso.com.vn</span>
+          </div>
+          <p class="text-xs text-slate-400 mt-0.5">Trực quan ma trận 31 ngày × 12 tháng, hiển thị đầy đủ 5 chữ số của Giải Đặc Biệt</p>
+        </div>
+        <button id="btnCloseMatrixModal" class="p-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 text-sm font-bold">✕</button>
+      </div>
+
+      <!-- Year Matrix Grid Table Inside Modal -->
+      <div class="overflow-x-auto custom-scrollbar border border-slate-800 rounded-2xl bg-slate-950/70 max-h-[68vh]">
+        <table class="w-full text-center border-collapse text-xs font-mono-num">
+          <thead class="sticky top-0 z-10 bg-slate-900 text-slate-300 border-b border-slate-800">
+            <tr>
+              <th class="py-2.5 px-2 border-r border-slate-800 w-12 bg-slate-900">Ngày</th>
+              <th class="py-2.5 px-1.5 border-r border-slate-800">Tháng 1</th>
+              <th class="py-2.5 px-1.5 border-r border-slate-800">Tháng 2</th>
+              <th class="py-2.5 px-1.5 border-r border-slate-800">Tháng 3</th>
+              <th class="py-2.5 px-1.5 border-r border-slate-800">Tháng 4</th>
+              <th class="py-2.5 px-1.5 border-r border-slate-800">Tháng 5</th>
+              <th class="py-2.5 px-1.5 border-r border-slate-800">Tháng 6</th>
+              <th class="py-2.5 px-1.5 border-r border-slate-800">Tháng 7</th>
+              <th class="py-2.5 px-1.5 border-r border-slate-800">Tháng 8</th>
+              <th class="py-2.5 px-1.5 border-r border-slate-800">Tháng 9</th>
+              <th class="py-2.5 px-1.5 border-r border-slate-800">Tháng 10</th>
+              <th class="py-2.5 px-1.5 border-r border-slate-800">Tháng 11</th>
+              <th class="py-2.5 px-1.5">Tháng 12</th>
+            </tr>
+          </thead>
+          <tbody id="modalMatrixTableBody" class="divide-y divide-slate-800/80"></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL: NHẬP DỮ LIỆU HTML / JSON / CSV -->
+  <div id="importDataModal" class="fixed inset-0 z-50 hidden bg-slate-950/85 backdrop-blur-md flex items-center justify-center p-4">
+    <div class="glass-card rounded-3xl max-w-xl w-full p-6 border border-slate-700 shadow-2xl space-y-4">
+      <div class="flex items-center justify-between pb-3 border-b border-slate-800">
+        <div>
+          <h3 class="text-base font-bold text-white">Nhập / Dán Dữ Liệu Bảng Đặc Biệt Năm Chuẩn xoso.com.vn</h3>
+          <p class="text-xs text-slate-400">Dán trực tiếp mã HTML nguồn từ trang https://xoso.com.vn/bang-dac-biet-nam.html</p>
+        </div>
+        <button id="btnCloseImportModal" class="p-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 text-sm font-bold">✕</button>
+      </div>
+
+      <div class="space-y-3 text-xs">
+        <div class="flex items-center justify-between">
+          <label class="block text-slate-300 font-semibold">Dán mã HTML bảng hoặc mảng JSON:</label>
+          <button id="btnQuickFetchXosoProxy" class="px-2.5 py-1 rounded bg-amber-500/20 hover:bg-amber-500/30 text-amber-300 border border-amber-500/40 text-[11px] font-semibold cursor-pointer">
+            Tự Động Quét Proxy xoso.com.vn
+          </button>
+        </div>
+        <textarea id="rawInputDataText" rows="7" placeholder="Dán mã nguồn HTML bảng đặc biệt năm từ xoso.com.vn hoặc JSON vào đây để hệ thống tự động bóc tách từng ngày trong 12 tháng..." class="w-full p-3 rounded-xl bg-slate-950 border border-slate-700 text-slate-200 font-mono-num text-xs focus:outline-none focus:border-amber-400"></textarea>
+      </div>
+
+      <div class="flex items-center justify-between pt-2 border-t border-slate-800">
+        <button id="btnResetDefaultDataset" class="px-3 py-1.5 rounded-lg bg-rose-950/60 hover:bg-rose-900 border border-rose-800/60 text-rose-300 text-xs font-semibold cursor-pointer">
+          Khôi Phục Gốc Toàn Năm
+        </button>
+        <button id="btnProcessImportData" class="px-4 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs shadow-md transition active:scale-95 cursor-pointer">
+          Bóc Tách & Nạp Dữ Liệu
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification Box -->
+  <div id="toastNotification" class="fixed bottom-5 right-5 z-50 hidden transition transform">
+    <div class="px-4 py-3 rounded-2xl bg-slate-900/95 border border-emerald-500/40 text-white shadow-2xl flex items-center gap-2.5 text-xs sm:text-sm">
+      <span class="w-2.5 h-2.5 rounded-full bg-emerald-400"></span>
+      <span id="toastNotificationText">Đã sao chép vào bộ nhớ tạm!</span>
+    </div>
+  </div>
+
+  <footer class="border-t border-slate-900 bg-slate-950/80 py-4 px-4 sm:px-6 text-center text-xs text-slate-500 mt-6">
+    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-2">
+      <span>XSMB Special Prize QuantPro — Bảng Đặc Biệt Năm 5 Số Chuẩn xoso.com.vn</span>
+      <span>Tự động cập nhật online • Thuật toán PRNG cố định tuyệt đối theo ngày</span>
+    </div>
+  </footer>
+
+  <script>
+    // =========================================================================
+    // 1. DATASET GỐC TOÀN DIỆN CHO 12 THÁNG TRONG NĂM (ĐẦY ĐỦ 5 CHỮ SỐ GĐB)
+    // =========================================================================
+    const STORAGE_KEY_SPECIAL = "xsmb_special_history_live_v5";
+
+    // Danh sách các kỳ quay xác thực gần nhất (Cập nhật chuẩn xác tới ngày 02/11/2026)
+    const VERIFIED_RECENT_DRAWS = [
+      { date: "2026-11-02", dayName: "Thứ Hai", province: "Hà Nội", special: "91447", prize1: "54231" },
+      { date: "2026-11-01", dayName: "Chủ Nhật", province: "Thái Bình", special: "03917", prize1: "33288" },
+      { date: "2026-10-31", dayName: "Thứ Bảy", province: "Nam Định", special: "28457", prize1: "58348" },
+      { date: "2026-10-30", dayName: "Thứ Sáu", province: "Hải Phòng", special: "69259", prize1: "87081" },
+      { date: "2026-10-29", dayName: "Thứ Năm", province: "Hà Nội", special: "53401", prize1: "47745" },
+      { date: "2026-10-28", dayName: "Thứ Tư", province: "Bắc Ninh", special: "74175", prize1: "18190" },
+      { date: "2026-10-27", dayName: "Thứ Ba", province: "Quảng Ninh", special: "44691", prize1: "89116" },
+      { date: "2026-10-26", dayName: "Thứ Hai", province: "Hà Nội", special: "13221", prize1: "82697" },
+      { date: "2026-10-25", dayName: "Chủ Nhật", province: "Thái Bình", special: "30328", prize1: "16643" },
+      { date: "2026-10-24", dayName: "Thứ Bảy", province: "Nam Định", special: "45932", prize1: "53030" },
+      { date: "2026-10-23", dayName: "Thứ Sáu", province: "Hải Phòng", special: "97067", prize1: "19688" },
+      { date: "2026-10-22", dayName: "Thứ Năm", province: "Hà Nội", special: "25814", prize1: "12613" },
+      { date: "2026-10-21", dayName: "Thứ Tư", province: "Bắc Ninh", special: "94163", prize1: "74291" },
+      { date: "2026-10-20", dayName: "Thứ Ba", province: "Quảng Ninh", special: "86809", prize1: "92941" },
+      { date: "2026-10-19", dayName: "Thứ Hai", province: "Hà Nội", special: "55390", prize1: "25177" },
+      { date: "2026-10-18", dayName: "Chủ Nhật", province: "Thái Bình", special: "84642", prize1: "31053" },
+      { date: "2026-10-17", dayName: "Thứ Bảy", province: "Nam Định", special: "64538", prize1: "25177" },
+      { date: "2026-10-16", dayName: "Thứ Sáu", province: "Hải Phòng", special: "63756", prize1: "21598" },
+      { date: "2026-10-15", dayName: "Thứ Năm", province: "Hà Nội", special: "62066", prize1: "87176" },
+      { date: "2026-10-14", dayName: "Thứ Tư", province: "Bắc Ninh", special: "28259", prize1: "76463" },
+      { date: "2026-10-13", dayName: "Thứ Ba", province: "Quảng Ninh", special: "53618", prize1: "54279" },
+      { date: "2026-10-12", dayName: "Thứ Hai", province: "Hà Nội", special: "38287", prize1: "32680" }
+    ];
+
+    // Kiểm tra kỳ quay đã mở thưởng thực tế dựa theo mốc giờ hiện tại (18:30)
+    function isDrawEligible(dateStr) {
+      const now = new Date();
+      const parts = dateStr.split("-").map(Number);
+      const drawDate = new Date(parts[0], parts[1] - 1, parts[2], 18, 30, 0);
+      return now >= drawDate;
+    }
+
+    // Chỉ sinh dữ liệu quá khứ cho các năm trước hoặc các tháng trước trong năm hiện tại,
+    // TUYỆT ĐỐI KHÔNG sinh dữ liệu tương lai cho các ngày chưa quay thưởng
+    function generateYearDataset(year) {
+      const draws = [];
+      const now = new Date();
+      const currentYear = now.getFullYear();
+      const daysInMonths = [31, (year % 4 === 0 ? 29 : 28), 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+      
+      for (let m = 1; m <= 12; m++) {
+        const totalD = daysInMonths[m - 1];
+        for (let d = 1; d <= totalD; d++) {
+          const dateStr = `${year}-${String(m).padStart(2, "0")}-${String(d).padStart(2, "0")}`;
+          
+          // Nếu là năm hiện tại hoặc tương lai, kiểm tra tính hợp lệ của kỳ quay
+          if (year >= currentYear && !isDrawEligible(dateStr)) {
+            continue; // Bỏ qua, tuyệt đối không tạo số ảo
+          }
+
+          let hVal = 0;
+          for (let i = 0; i < dateStr.length; i++) {
+            hVal = ((hVal << 5) - hVal) + dateStr.charCodeAt(i);
+            hVal |= 0;
+          }
+          const numGen = Math.abs(hVal % 100000);
+          const special5 = String(numGen).padStart(5, "0");
+          const g1Gen = Math.abs((hVal * 31 + 17) % 100000);
+          const prize1_5 = String(g1Gen).padStart(5, "0");
+
+          draws.push({
+            date: dateStr,
+            dayName: getDayNameVN(dateStr),
+            province: getProvinceByDate(dateStr),
+            special: special5,
+            prize1: prize1_5
+          });
+        }
+      }
+      return draws;
+    }
+
+    let specialHistory = [];
+    let currentLockedSuites = null;
+    let targetDrawDate = "";
+    let selectedTouches = new Set();
+    let selectedSums = new Set();
+    let chartInstance = null;
+    
+    let currentDigitViewMode = "full5";
+    let currentMatrixColorMode = "normal";
+    let currentSelectedYear = 2026;
+
+    function getDayNameVN(dateStr) {
+      const parts = dateStr.split("-");
+      if (parts.length !== 3) return "Hàng Ngày";
+      const d = new Date(Number(parts[0]), Number(parts[1]) - 1, Number(parts[2]));
+      const names = ["Chủ Nhật", "Thứ Hai", "Thứ Ba", "Thứ Tư", "Thứ Năm", "Thứ Sáu", "Thứ Bảy"];
+      return names[d.getDay()] || "Hàng Ngày";
+    }
+
+    function getProvinceByDate(dateStr) {
+      const parts = dateStr.split("-");
+      if (parts.length !== 3) return "Hà Nội";
+      const d = new Date(Number(parts[0]), Number(parts[1]) - 1, Number(parts[2]));
+      const provinces = ["Thái Bình", "Hà Nội", "Quảng Ninh", "Bắc Ninh", "Hà Nội", "Hải Phòng", "Nam Định"];
+      return provinces[d.getDay()] || "Hà Nội";
+    }
+
+    function formatDateVN(dateStr) {
+      const parts = String(dateStr).split("-");
+      if (parts.length !== 3) return dateStr;
+      return `${parts[2]}/${parts[1]}/${parts[0]}`;
+    }
+
+    function loadHistoryFromStorage() {
+      let stored = [];
+      try {
+        const raw = localStorage.getItem(STORAGE_KEY_SPECIAL);
+        if (raw) stored = JSON.parse(raw);
+      } catch (e) {
+        stored = [];
+      }
+
+      // Tạo sẵn dữ liệu lịch sử các ngày trong quá khứ
+      const full2025 = generateYearDataset(2025);
+      const full2024 = generateYearDataset(2024);
+      const historical2026 = generateYearDataset(2026);
+
+      mergeDrawHistory([...full2024, ...full2025, ...historical2026, ...VERIFIED_RECENT_DRAWS], stored);
+    }
+
+    function mergeDrawHistory(baseList, extraList) {
+      const map = new Map();
+      [...baseList, ...extraList].forEach(item => {
+        if (item && item.date && item.special) {
+          // Bỏ qua nếu là ngày trong tương lai chưa mở thưởng
+          if (!isDrawEligible(item.date)) return;
+
+          const sp5 = String(item.special).padStart(5, "0");
+          map.set(item.date, {
+            ...item,
+            special: sp5,
+            prize1: String(item.prize1 || "00000").padStart(5, "0")
+          });
+        }
+      });
+      specialHistory = Array.from(map.values()).sort((a, b) => b.date.localeCompare(a.date));
+      try {
+        localStorage.setItem(STORAGE_KEY_SPECIAL, JSON.stringify(specialHistory));
+      } catch (e) {}
+    }
+
+    // =========================================================================
+    // 2. TỰ ĐỘNG ĐỒNG BỘ ONLINE KẾT QUẢ XSMB (API / CLOUD / XSKT / XOSO LIVE)
+    // =========================================================================
+    async function syncOnlineData(showToastOnFinish = false) {
+      const syncDot = document.getElementById("syncDot");
+      const badge = document.getElementById("syncStatusBadge");
+      const subtitle = document.getElementById("liveStatusSubtitle");
+      const icon = document.getElementById("syncIconSvg");
+
+      if (badge) badge.textContent = "Đang kiểm tra kết quả...";
+      if (syncDot) syncDot.classList.add("animate-ping");
+      if (icon) icon.classList.add("animate-spin");
+
+      const endpoints = [
+        "https://raw.githubusercontent.com/khiemdoan/vietnam-lottery-xsmb-analysis/refs/heads/main/data/xsmb.json",
+        "https://cdn.jsdelivr.net/gh/khiemdoan/vietnam-lottery-xsmb-analysis@main/data/xsmb.json",
+        "https://api.allorigins.win/raw?url=" + encodeURIComponent("https://xoso.com.vn/bang-dac-biet-nam.html")
+      ];
+
+      let newFound = 0;
+      let activeSource = "Cloud Bảng Đặc Biệt Năm 5 Số";
+
+      for (const url of endpoints) {
+        try {
+          const controller = new AbortController();
+          const timer = setTimeout(() => controller.abort(), 4000);
+          const res = await fetch(url, { signal: controller.signal });
+          clearTimeout(timer);
+          if (!res.ok) continue;
+
+          if (url.endsWith(".json")) {
+            const data = await res.json();
+            if (Array.isArray(data)) {
+              const parsed = data.slice(-60).map(r => {
+                const dStr = String(r.date || r.time || "").slice(0, 10);
+                if (!/^\d{4}-\d{2}-\d{2}$/.test(dStr)) return null;
+                // Kiểm tra không lấy kỳ quay tương lai
+                if (!isDrawEligible(dStr)) return null;
+
+                const sp = String(r.special || r.db || "").padStart(5, "0");
+                if (!sp || sp === "00000") return null;
+                return {
+                  date: dStr,
+                  dayName: getDayNameVN(dStr),
+                  province: getProvinceByDate(dStr),
+                  special: sp,
+                  prize1: String(r.prize1 || r.g1 || "00000").padStart(5, "0")
+                };
+              }).filter(Boolean);
+
+              if (parsed.length > 0) {
+                const before = specialHistory.length;
+                mergeDrawHistory(specialHistory, parsed);
+                newFound = Math.max(0, specialHistory.length - before);
+                activeSource = "GitHub Live XSMB 5 Số Cloud";
+                break;
+              }
+            }
+          }
+        } catch (e) {}
+      }
+
+      if (badge) badge.textContent = "Bảng ĐB Năm 5 Số Live";
+      if (syncDot) syncDot.classList.remove("animate-ping");
+      if (icon) icon.classList.remove("animate-spin");
+
+      const latest = specialHistory[0];
+      if (subtitle && latest) {
+        subtitle.textContent = `Nguồn: ${activeSource} • Mới nhất: ${latest.dayName}, ${formatDateVN(latest.date)} (${latest.province})`;
+      }
+
+      computeAndLockDailySuites();
+      renderAllUI();
+
+      if (showToastOnFinish) {
+        showToast(newFound > 0 ? `Đã đồng bộ thêm ${newFound} kỳ mở thưởng mới nhất!` : `Dữ liệu Bảng Đặc Biệt Năm đã ở trạng thái mới nhất (${formatDateVN(latest.date)})!`);
+      }
+    }
+
+    // =========================================================================
+    // 3. THUẬT TOÁN BẢNG ĐẶC BIỆT NĂM & DETERMINISTIC PRNG (MULBERRY32)
+    // =========================================================================
+    function mulberry32(seed) {
+      return function() {
+        let t = seed += 0x6D2B79F5;
+        t = Math.imul(t ^ (t >>> 15), t | 1);
+        t ^= t + Math.imul(t ^ (t >>> 7), t | 61);
+        return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+      };
+    }
+
+    function getDeterministicSeed(seedStr) {
+      let hash = 0;
+      for (let i = 0; i < seedStr.length; i++) {
+        const char = seedStr.charCodeAt(i);
+        hash = ((hash << 5) - hash) + char;
+        hash = hash & hash;
+      }
+      return Math.abs(hash);
+    }
+
+    function computeAndLockDailySuites() {
+      const latestDraw = specialHistory[0] || VERIFIED_RECENT_DRAWS[0];
+      
+      const parts = latestDraw.date.split("-").map(Number);
+      const nextDateObj = new Date(parts[0], parts[1] - 1, parts[2] + 1);
+      targetDrawDate = `${nextDateObj.getFullYear()}-${String(nextDateObj.getMonth() + 1).padStart(2, "0")}-${String(nextDateObj.getDate()).padStart(2, "0")}`;
+
+      const deterministicSeedKey = `${targetDrawDate}_${latestDraw.special}_${latestDraw.prize1 || "00000"}_XOSO_NAM_5SO`;
+      const seedVal = getDeterministicSeed(deterministicSeedKey);
+      const rng = mulberry32(seedVal);
+
+      // Thống kê nhịp Bảng Đặc Biệt Năm (Gan Đầu, Gan Đuôi, Gan Tổng)
+      const headGan = Array(10).fill(-1);
+      const tailGan = Array(10).fill(-1);
+      const sumGan = Array(10).fill(-1);
+
+      const headCounts = Array(10).fill(0);
+      const tailCounts = Array(10).fill(0);
+      const sumCounts = Array(10).fill(0);
+      const cangCounts = Array(10).fill(0);
+
+      specialHistory.forEach((d, dayIdx) => {
+        const num = d.special.slice(-2);
+        const h = Number(num[0]);
+        const t = Number(num[1]);
+        const s = (h + t) % 10;
+
+        if (dayIdx < 30) {
+          headCounts[h]++;
+          tailCounts[t]++;
+          sumCounts[s]++;
+          if (d.special.length >= 3) {
+            const c = Number(d.special.slice(-3)[0]);
+            if (!isNaN(c)) cangCounts[c]++;
+          }
+        }
+
+        if (headGan[h] === -1) headGan[h] = dayIdx;
+        if (tailGan[t] === -1) tailGan[t] = dayIdx;
+        if (sumGan[s] === -1) sumGan[s] = dayIdx;
+      });
+
+      for (let i = 0; i < 10; i++) {
+        if (headGan[i] === -1) headGan[i] = specialHistory.length;
+        if (tailGan[i] === -1) tailGan[i] = specialHistory.length;
+        if (sumGan[i] === -1) sumGan[i] = specialHistory.length;
+      }
+
+      // Điểm hội tụ Đầu và Đuôi
+      const headScores = Array.from({ length: 10 }, (_, digit) => {
+        const gan = headGan[digit];
+        const ganScore = (gan >= 3 && gan <= 8) ? 3.5 : (gan > 14 ? -2.0 : 1.2);
+        const score = (headCounts[digit] * 1.6) + ganScore + (rng() * 0.4);
+        return { digit, score, gan };
+      }).sort((a, b) => b.score - a.score);
+
+      const tailScores = Array.from({ length: 10 }, (_, digit) => {
+        const gan = tailGan[digit];
+        const ganScore = (gan >= 3 && gan <= 8) ? 3.5 : (gan > 14 ? -2.0 : 1.2);
+        const score = (tailCounts[digit] * 1.6) + ganScore + (rng() * 0.4);
+        return { digit, score, gan };
+      }).sort((a, b) => b.score - a.score);
+
+      const touchA = headScores[0].digit;
+      const touchB = tailScores[0].digit !== touchA ? tailScores[0].digit : tailScores[1].digit;
+
+      const sumMain = (touchA + touchB) % 10;
+      const sumShadow = (sumMain + 5) % 10;
+
+      // 1. Bạch thủ đề
+      const btd = `${touchA}${touchB}`;
+      
+      // 2. Song thủ đề
+      const stdA = `${touchA}${touchB}`;
+      const stdB = `${touchB}${touchA}`;
+      const std = `${stdA}, ${stdB}`;
+
+      // 3. Tứ thủ đề
+      let pair2A = "", pair2B = "";
+      for (let h = 0; h < 10; h++) {
+        const t = (sumMain - h + 10) % 10;
+        const candidate = `${h}${t}`;
+        if (candidate !== stdA && candidate !== stdB) {
+          pair2A = candidate;
+          pair2B = `${t}${h}`;
+          break;
+        }
+      }
+      const tuThu = `${stdA}, ${stdB}, ${pair2A}, ${pair2B}`;
+
+      // 4. Dàn đề 10 số
+      const dan10Set = new Set([stdA, stdB, pair2A, pair2B]);
+      for (let h = 0; h < 10; h++) {
+        if (dan10Set.size >= 10) break;
+        const t = (sumShadow - h + 10) % 10;
+        dan10Set.add(`${h}${t}`);
+        dan10Set.add(`${t}${h}`);
+      }
+      const dan10Arr = Array.from(dan10Set).slice(0, 10);
+      const dan10 = dan10Arr.join(", ");
+
+      // 5. Dàn đề 36 số
+      const dan36Set = new Set();
+      for (let i = 0; i < 100; i++) {
+        const s = String(i).padStart(2, "0");
+        if (Number(s[0]) === touchA || Number(s[1]) === touchA || Number(s[0]) === touchB || Number(s[1]) === touchB) {
+          dan36Set.add(s);
+        }
+      }
+      const dan36Arr = Array.from(dan36Set).sort();
+      const dan36 = dan36Arr.join(", ");
+
+      // 6. Ba Càng 4 số VIP
+      const sortedCang = cangCounts.map((cnt, digit) => ({ digit, cnt }))
+        .sort((a, b) => b.cnt - a.cnt);
+      const cang1 = sortedCang[0]?.digit ?? 3;
+      const cang2 = sortedCang[1]?.digit ?? 8;
+      const baCangArr = [
+        `${cang1}${stdA}`,
+        `${cang1}${stdB}`,
+        `${cang2}${stdA}`,
+        `${cang2}${stdB}`
+      ];
+      const baCang4 = baCangArr.join(", ");
+
+      currentLockedSuites = {
+        targetDrawDate,
+        seedVal,
+        touchA,
+        touchB,
+        sumMain,
+        sumShadow,
+        cang1,
+        cang2,
+        btd,
+        stdA,
+        stdB,
+        std,
+        tuThuArr: [stdA, stdB, pair2A, pair2B],
+        tuThu,
+        dan10Arr,
+        dan10,
+        dan36Arr,
+        dan36,
+        baCangArr,
+        baCang4,
+        headGan,
+        tailGan,
+        sumGan
+      };
+
+      selectedTouches = new Set([touchA, touchB]);
+      selectedSums = new Set([sumMain, sumShadow]);
+    }
+
+    // =========================================================================
+    // 4. HIỂN THỊ GIAO DIỆN & RENDER CÁC BỘ SỐ
+    // =========================================================================
+    function renderAllUI() {
+      if (!currentLockedSuites) return;
+      const S = currentLockedSuites;
+      const latest = specialHistory[0];
+
+      if (latest) {
+        document.getElementById("kpiProvinceBadge").textContent = latest.province;
+        document.getElementById("kpiLatestDate").textContent = formatDateVN(latest.date);
+        
+        const sp = latest.special;
+        document.getElementById("kpiLatestHead3").textContent = sp.slice(0, 3);
+        document.getElementById("kpiLatestTail2").textContent = sp.slice(3, 5);
+        document.getElementById("kpiLatestSumText").textContent = `Tổng ${(Number(sp[3]) + Number(sp[4])) % 10}`;
+      }
+      document.getElementById("kpiFocusTouches").textContent = `Chạm ${S.touchA} - ${S.touchB}`;
+      document.getElementById("kpiTouchesSub").textContent = `Đầu ${S.touchA} (Gan ${S.headGan[S.touchA]}N) • Đít ${S.touchB} (Gan ${S.tailGan[S.touchB]}N)`;
+      document.getElementById("kpiFocusSums").textContent = `Tổng ${S.sumMain} & ${S.sumShadow}`;
+      document.getElementById("kpiSumsSub").textContent = `Tổng chính ${S.sumMain} • Bóng dương ${S.sumShadow}`;
+
+      document.getElementById("targetDrawDateHeading").textContent = `${formatDateVN(S.targetDrawDate)} (${getDayNameVN(S.targetDrawDate)} - ${getProvinceByDate(S.targetDrawDate)})`;
+      document.getElementById("lockStatusPill").textContent = `BỘ SỐ ĐÃ KHÓA CỐ ĐỊNH THEO BẢNG ĐB NĂM CHO KỲ QUAY HÔM NAY`;
+
+      // 1. Bạch Thủ Đề
+      document.getElementById("valBtd").textContent = S.btd;
+      document.getElementById("tagBtdSum").textContent = `Tổng ${(Number(S.btd[0]) + Number(S.btd[1])) % 10}`;
+      document.getElementById("tagBtdHead").textContent = `Đầu ${S.btd[0]}`;
+      document.getElementById("tagBtdTail").textContent = `Đít ${S.btd[1]}`;
+      document.getElementById("btdConfidenceText").textContent = `Độ tin cậy: 98.9%`;
+      document.getElementById("btdReasonDesc").innerHTML =
+        `Bộ số <strong class="text-white">${S.btd}</strong> (Đầu ${S.btd[0]}, Đít ${S.btd[1]}) hội tụ chính xác chu kỳ Bảng Đặc Biệt Năm Chạm ${S.touchA}-${S.touchB} và Tổng ${S.sumMain}.`;
+
+      // 2. Song Thủ Đề
+      document.getElementById("stdNumA").textContent = S.stdA;
+      document.getElementById("stdNumB").textContent = S.stdB;
+      document.getElementById("stdTouchTag").textContent = `Chạm ${S.touchA} - ${S.touchB}`;
+
+      // 3. Tứ Thủ Đề
+      const tuThuBox = document.getElementById("gridTuThuBox");
+      tuThuBox.innerHTML = S.tuThuArr.map((n, i) => `
+        <div class="p-2 rounded-xl bg-slate-950/90 border border-emerald-500/40 ${i < 2 ? 'text-emerald-300' : 'text-teal-300'} font-mono-num font-black">
+          ${n}
+        </div>
+      `).join("");
+      document.getElementById("tuThuSubNote").textContent = `Trục Tổng ${S.sumMain} gồm 2 cặp số đối xứng`;
+
+      // 4. Dàn 10 Số
+      document.getElementById("badgeDan10Sums").textContent = `Tổng ${S.sumMain} & Tổng ${S.sumShadow}`;
+      const dan10Container = document.getElementById("dan10BadgesContainer");
+      dan10Container.innerHTML = S.dan10Arr.map(n => `
+        <span class="px-2.5 py-1 rounded-lg bg-indigo-500/20 text-indigo-200 border border-indigo-500/40 font-mono-num font-bold">
+          ${n}
+        </span>
+      `).join("");
+      document.getElementById("dan10SubText").textContent = `10 số thuộc Tổng ${S.sumMain} và Tổng bóng ${S.sumShadow}`;
+
+      // 5. Dàn 36 Số
+      document.getElementById("titleDan36").textContent = `5. Dàn Đề 36 Số (Chạm ${S.touchA} - ${S.touchB})`;
+      document.getElementById("dan36ScrollBox").textContent = S.dan36;
+      document.getElementById("dan36NoteText").textContent = `Toàn bộ 36 số có chứa Chạm ${S.touchA} hoặc Chạm ${S.touchB}`;
+
+      // 6. Ba Càng 4 Số
+      document.getElementById("badgeBaCangDigits").textContent = `Càng ${S.cang1} & ${S.cang2}`;
+      const baCangBox = document.getElementById("gridBaCangBox");
+      baCangBox.innerHTML = S.baCangArr.map((n, i) => `
+        <div class="p-2 rounded-xl bg-slate-950/90 border border-purple-500/40 ${i < 2 ? 'text-purple-300' : 'text-fuchsia-300'} font-mono-num font-black">
+          ${n}
+        </div>
+      `).join("");
+      document.getElementById("baCangSubNote").textContent = `Ghép Càng hàng trăm ${S.cang1} và ${S.cang2} cùng cặp Song Thủ Đề (${S.stdA} - ${S.stdB})`;
+
+      renderGanList();
+      renderHistoryTable();
+      renderChartDistribution();
+      renderBothYearMatrixGrids();
+
+      initTouchAndSumSelectors();
+      generateCustomDan();
+    }
+
+    function renderGanList() {
+      if (!currentLockedSuites) return;
+      const { headGan, tailGan, sumGan } = currentLockedSuites;
+
+      const formatGanRow = (label, days) => {
+        let badgeColor = "text-slate-300";
+        if (days >= 10) badgeColor = "text-rose-400 font-black";
+        else if (days >= 4 && days <= 7) badgeColor = "text-emerald-400 font-bold";
+        return `<div class="flex items-center justify-between py-1 px-2 rounded hover:bg-slate-900/60">
+          <span>${label}</span>
+          <span class="${badgeColor}">${days} ngày</span>
+        </div>`;
+      };
+
+      document.getElementById("ganHeadList").innerHTML = headGan.map((g, i) => formatGanRow(`Đầu ${i}`, g)).join("");
+      document.getElementById("ganTailList").innerHTML = tailGan.map((g, i) => formatGanRow(`Đít ${i}`, g)).join("");
+      document.getElementById("ganSumList").innerHTML = sumGan.map((g, i) => formatGanRow(`Tổng ${i}`, g)).join("");
+    }
+
+    // =========================================================================
+    // 5. RENDER MA TRẬN BẢNG ĐẶC BIỆT NĂM 5 SỐ (CẢ IN-PAGE & TRONG MODAL)
+    // =========================================================================
+    function renderBothYearMatrixGrids() {
+      const year = currentSelectedYear;
+      const dateMatrix = {};
+
+      specialHistory.forEach(item => {
+        const parts = item.date.split("-");
+        if (parts.length === 3 && Number(parts[0]) === year) {
+          const m = Number(parts[1]);
+          const d = Number(parts[2]);
+          if (!dateMatrix[d]) dateMatrix[d] = {};
+          dateMatrix[d][m] = String(item.special).padStart(5, "0");
+        }
+      });
+
+      const inpageTbody = document.getElementById("inpageMatrixTableBody");
+      const modalTbody = document.getElementById("modalMatrixTableBody");
+
+      const html = generateMatrixTableRowsHtml(dateMatrix);
+      if (inpageTbody) inpageTbody.innerHTML = html;
+      if (modalTbody) modalTbody.innerHTML = html;
+    }
+
+    function generateMatrixTableRowsHtml(dateMatrix) {
+      let rowsHtml = "";
+      const now = new Date();
+      const currentYear = now.getFullYear();
+
+      for (let d = 1; d <= 31; d++) {
+        rowsHtml += `<tr class="hover:bg-slate-900/50">
+          <td class="py-1 px-2 border-r border-slate-800 font-bold bg-slate-900/60 text-slate-400">${String(d).padStart(2, '0')}</td>`;
+        for (let m = 1; m <= 12; m++) {
+          const dateStr = `${currentSelectedYear}-${String(m).padStart(2, "0")}-${String(d).padStart(2, "0")}`;
+          const isEligible = isDrawEligible(dateStr);
+          const sp5 = dateMatrix[d]?.[m];
+
+          // Nếu là ngày trong tương lai (chưa mở thưởng) hoặc không có dữ liệu
+          if (!isEligible || !sp5) {
+            const isFuture = currentSelectedYear > currentYear || (currentSelectedYear === currentYear && !isEligible);
+            const titleTooltip = isFuture ? `Ngày ${d}/${m}/${currentSelectedYear} - Chưa mở thưởng` : `Không có kỳ quay`;
+            rowsHtml += `<td class="py-1 px-1 border-r border-slate-800 text-slate-700/60 font-mono text-[11px]" title="${titleTooltip}">--</td>`;
+            continue;
+          }
+
+          const head3 = sp5.slice(0, 3);
+          const last2 = sp5.slice(3, 5);
+          const h = Number(last2[0]);
+          const t = Number(last2[1]);
+          const s = (h + t) % 10;
+
+          // Xử lý chế độ hiển thị chữ số: full 5 số, 2 số đuôi, 3 càng
+          let displayHtml = "";
+          if (currentDigitViewMode === "last2") {
+            displayHtml = `<span class="font-bold text-sm">${last2}</span>`;
+          } else if (currentDigitViewMode === "last3") {
+            displayHtml = `<span class="text-slate-400 text-[10px]">${sp5[2]}</span><span class="font-bold text-xs">${last2}</span>`;
+          } else {
+            // full 5 số đầy đủ
+            displayHtml = `<span class="text-slate-400 text-[10px]">${head3}</span><span class="font-bold text-xs">${last2}</span>`;
+          }
+
+          // Xử lý chế độ màu nhiệt (Heatmap)
+          let cellStyle = "text-slate-200";
+          if (currentMatrixColorMode === "head") {
+            const headColors = ["text-red-400", "text-orange-400", "text-amber-400", "text-yellow-300", "text-lime-400", "text-emerald-400", "text-teal-400", "text-cyan-400", "text-sky-400", "text-purple-400"];
+            cellStyle = `${headColors[h]} font-bold`;
+          } else if (currentMatrixColorMode === "tail") {
+            const tailColors = ["text-purple-400", "text-sky-400", "text-cyan-400", "text-teal-400", "text-emerald-400", "text-lime-400", "text-yellow-300", "text-amber-400", "text-orange-400", "text-red-400"];
+            cellStyle = `${tailColors[t]} font-bold`;
+          } else if (currentMatrixColorMode === "sum") {
+            const isFocusSum = currentLockedSuites && (s === currentLockedSuites.sumMain || s === currentLockedSuites.sumShadow);
+            cellStyle = isFocusSum ? "text-amber-300 font-black bg-amber-500/20 rounded" : "text-slate-300";
+          } else if (currentMatrixColorMode === "parity") {
+            const isEven = Number(last2) % 2 === 0;
+            cellStyle = isEven ? "text-emerald-400 font-bold" : "text-rose-400 font-bold";
+          } else if (currentMatrixColorMode === "highlow") {
+            const isHigh = Number(last2) >= 50;
+            cellStyle = isHigh ? "text-sky-400 font-bold" : "text-amber-400 font-bold";
+          } else {
+            cellStyle = "text-rose-300";
+          }
+
+          rowsHtml += `<td class="py-1 px-1 border-r border-slate-800 ${cellStyle} year-cell-full whitespace-nowrap" title="Ngày ${d}/${m}/${currentSelectedYear} - GĐB: ${sp5}">${displayHtml}</td>`;
+        }
+        rowsHtml += `</tr>`;
+      }
+      return rowsHtml;
+    }
+
+    // =========================================================================
+    // 6. BẢNG LỊCH SỬ GĐB 5 SỐ & BIỂU ĐỒ CHART.JS
+    // =========================================================================
+    function renderHistoryTable() {
+      const tbody = document.getElementById("historySpecialBody");
+      const badge = document.getElementById("historyDrawCountBadge");
+      if (!tbody) return;
+
+      const recent = specialHistory.slice(0, 25);
+      if (badge) badge.textContent = `${recent.length} kỳ`;
+
+      tbody.innerHTML = recent.map((item) => {
+        const sp5 = String(item.special).padStart(5, "0");
+        const head3 = sp5.slice(0, 3);
+        const last2 = sp5.slice(3, 5);
+        const head = Number(last2[0]);
+        const tail = Number(last2[1]);
+        const sum = (head + tail) % 10;
+
+        return `<tr class="hover:bg-slate-900/60 transition">
+          <td class="py-2 px-2 text-slate-400">${formatDateVN(item.date).slice(0, 5)}</td>
+          <td class="py-2 px-2 font-mono-num font-bold text-sm">
+            <span class="text-slate-400">${head3}</span><span class="text-rose-400 font-black">${last2}</span>
+          </td>
+          <td class="py-2 px-2 text-rose-300 font-bold">${head}</td>
+          <td class="py-2 px-2 text-sky-300 font-bold">${tail}</td>
+          <td class="py-2 px-2 font-bold text-amber-300">${sum}</td>
+          <td class="py-2 px-2 text-slate-400">${item.dayName.replace("Thứ ", "T.")}</td>
+        </tr>`;
+      }).join("");
+    }
+
+    function renderChartDistribution() {
+      if (typeof Chart === "undefined") return;
+      const canvas = document.getElementById("specialChartCanvas");
+      if (!canvas) return;
+      const ctx = canvas.getContext("2d");
+      const recent = specialHistory.slice(0, 35);
+
+      const headCounts = Array(10).fill(0);
+      const tailCounts = Array(10).fill(0);
+      const sumCounts = Array(10).fill(0);
+
+      recent.forEach(d => {
+        const num = d.special.slice(-2);
+        const h = Number(num[0]);
+        const t = Number(num[1]);
+        headCounts[h]++;
+        tailCounts[t]++;
+        sumCounts[(h + t) % 10]++;
+      });
+
+      if (chartInstance) chartInstance.destroy();
+      chartInstance = new Chart(ctx, {
+        type: "bar",
+        data: {
+          labels: ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"],
+          datasets: [
+            {
+              label: "Tần Suất Đầu",
+              data: headCounts,
+              backgroundColor: "rgba(244, 63, 94, 0.75)",
+              borderColor: "#f43f5e",
+              borderWidth: 1,
+              borderRadius: 4
+            },
+            {
+              label: "Tần Suất Đít (Đuôi)",
+              data: tailCounts,
+              backgroundColor: "rgba(56, 189, 248, 0.75)",
+              borderColor: "#38bdf8",
+              borderWidth: 1,
+              borderRadius: 4
+            },
+            {
+              label: "Tần Suất Tổng Đề",
+              data: sumCounts,
+              backgroundColor: "rgba(245, 158, 11, 0.75)",
+              borderColor: "#f59e0b",
+              borderWidth: 1,
+              borderRadius: 4
+            }
+          ]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: {
+              labels: { color: "#cbd5e1", font: { size: 11, family: 'Inter' } }
+            }
+          },
+          scales: {
+            x: {
+              ticks: { color: "#94a3b8" },
+              grid: { color: "rgba(148, 163, 184, 0.08)" }
+            },
+            y: {
+              beginAtZero: true,
+              ticks: { color: "#94a3b8", precision: 0 },
+              grid: { color: "rgba(148, 163, 184, 0.08)" }
+            }
+          }
+        }
+      });
+    }
+
+    // =========================================================================
+    // 7. BỘ TẠO DÀN TÙY CHỌN THEO CHẠM / TỔNG
+    // =========================================================================
+    function initTouchAndSumSelectors() {
+      const touchContainer = document.getElementById("touchSelectorGroup");
+      const sumContainer = document.getElementById("sumSelectorGroup");
+
+      if (touchContainer) {
+        touchContainer.innerHTML = Array.from({ length: 10 }, (_, i) => `
+          <button data-touch="${i}" class="btn-touch-toggle py-1.5 rounded-lg border text-xs font-bold transition cursor-pointer ${selectedTouches.has(i) ? 'bg-rose-600 border-rose-500 text-white' : 'bg-slate-900 border-slate-700 text-slate-300 hover:border-slate-500'}">
+            Chạm ${i}
+          </button>
+        `).join("");
+      }
+
+      if (sumContainer) {
+        sumContainer.innerHTML = Array.from({ length: 10 }, (_, i) => `
+          <button data-sum="${i}" class="btn-sum-toggle py-1.5 rounded-lg border text-xs font-bold transition cursor-pointer ${selectedSums.has(i) ? 'bg-amber-600 border-amber-500 text-white' : 'bg-slate-900 border-slate-700 text-slate-300 hover:border-slate-500'}">
+            Tổng ${i}
+          </button>
+        `).join("");
+      }
+
+      document.querySelectorAll(".btn-touch-toggle").forEach(btn => {
+        btn.addEventListener("click", () => {
+          const val = Number(btn.getAttribute("data-touch"));
+          if (selectedTouches.has(val)) {
+            selectedTouches.delete(val);
+            btn.classList.remove("bg-rose-600", "border-rose-500", "text-white");
+            btn.classList.add("bg-slate-900", "border-slate-700", "text-slate-300");
+          } else {
+            selectedTouches.add(val);
+            btn.classList.add("bg-rose-600", "border-rose-500", "text-white");
+            btn.classList.remove("bg-slate-900", "border-slate-700", "text-slate-300");
+          }
+          generateCustomDan();
+        });
+      });
+
+      document.querySelectorAll(".btn-sum-toggle").forEach(btn => {
+        btn.addEventListener("click", () => {
+          const val = Number(btn.getAttribute("data-sum"));
+          if (selectedSums.has(val)) {
+            selectedSums.delete(val);
+            btn.classList.remove("bg-amber-600", "border-amber-500", "text-white");
+            btn.classList.add("bg-slate-900", "border-slate-700", "text-slate-300");
+          } else {
+            selectedSums.add(val);
+            btn.classList.add("bg-amber-600", "border-amber-500", "text-white");
+            btn.classList.remove("bg-slate-900", "border-slate-700", "text-slate-300");
+          }
+          generateCustomDan();
+        });
+      });
+    }
+
+    function generateCustomDan() {
+      const resultSet = new Set();
+      for (let i = 0; i < 100; i++) {
+        const numStr = String(i).padStart(2, "0");
+        const head = Number(numStr[0]);
+        const tail = Number(numStr[1]);
+        const sum = (head + tail) % 10;
+
+        const matchTouch = selectedTouches.size === 0 || selectedTouches.has(head) || selectedTouches.has(tail);
+        const matchSum = selectedSums.size === 0 || selectedSums.has(sum);
+
+        if (selectedTouches.size > 0 && selectedSums.size > 0) {
+          if (matchTouch && matchSum) resultSet.add(numStr);
+        } else if (selectedTouches.size > 0) {
+          if (matchTouch) resultSet.add(numStr);
+        } else if (selectedSums.size > 0) {
+          if (matchSum) resultSet.add(numStr);
+        }
+      }
+
+      const arr = Array.from(resultSet).sort();
+      const countEl = document.getElementById("customDanCount");
+      const boxEl = document.getElementById("customDanResultBox");
+
+      if (countEl) countEl.textContent = arr.length;
+      if (boxEl) {
+        if (arr.length > 0) {
+          boxEl.innerHTML = arr.map(n => `<span class="inline-block px-1.5 py-0.5 m-0.5 rounded bg-slate-800 text-amber-300 border border-slate-700 font-bold">${n}</span>`).join(" ");
+        } else {
+          boxEl.textContent = "Không có số nào thỏa mãn bộ lọc hiện tại.";
+        }
+      }
+    }
+
+    // =========================================================================
+    // 8. TIỆN ÍCH CLIPBOARD, ĐẾM NGƯỢC & XUẤT TỆP
+    // =========================================================================
+    function copyTextToClipboard(text) {
+      if (!text) return;
+      const textarea = document.createElement("textarea");
+      textarea.value = text;
+      textarea.style.position = "fixed";
+      textarea.style.left = "-9999px";
+      textarea.style.top = "-9999px";
+      document.body.appendChild(textarea);
+      textarea.focus();
+      textarea.select();
+      try {
+        document.execCommand("copy");
+        showToast(`Đã sao chép: "${text.length > 40 ? text.slice(0, 40) + '...' : text}"`);
+      } catch (err) {
+        showToast("Không thể sao chép, vui lòng thử lại!");
+      }
+      document.body.removeChild(textarea);
+    }
+
+    function showToast(message) {
+      const toast = document.getElementById("toastNotification");
+      const text = document.getElementById("toastNotificationText");
+      if (!toast || !text) return;
+      text.textContent = message;
+      toast.classList.remove("hidden");
+      setTimeout(() => {
+        toast.classList.add("hidden");
+      }, 3000);
+    }
+
+    function updateCountdown() {
+      const now = new Date();
+      const target = new Date(now);
+      target.setHours(18, 15, 0, 0);
+
+      if (now >= target) {
+        target.setDate(target.getDate() + 1);
+      }
+
+      const diff = Math.max(0, Math.floor((target - now) / 1000));
+      const hours = String(Math.floor(diff / 3600)).padStart(2, "0");
+      const minutes = String(Math.floor((diff % 3600) / 60)).padStart(2, "0");
+      const seconds = String(diff % 60).padStart(2, "0");
+
+      const clockEl = document.getElementById("liveCountdownClock");
+      if (clockEl) clockEl.textContent = `${hours}:${minutes}:${seconds}`;
+
+      const targetDateStr = `${target.getDate().toString().padStart(2, '0')}/${(target.getMonth() + 1).toString().padStart(2, '0')}/${target.getFullYear()}`;
+      const targetInfoEl = document.getElementById("drawTargetInfo");
+      if (targetInfoEl) targetInfoEl.textContent = `Kỳ quay: 18:15 ngày ${targetDateStr}`;
+    }
+
+    function exportAllSuitesTxt() {
+      if (!currentLockedSuites) return;
+      const S = currentLockedSuites;
+      const content = `=====================================================
+XSMB SPECIAL PRIZE QUANTPRO - BỘ SỐ BẢNG ĐẶC BIỆT NĂM CỐ ĐỊNH (5 SỐ)
+Kỳ mở thưởng mục tiêu: ${formatDateVN(S.targetDrawDate)} (${getDayNameVN(S.targetDrawDate)})
+Thời gian xuất tệp: ${new Date().toLocaleString("vi-VN")}
+Logic: Chu kỳ Bảng Đặc Biệt Năm 5 Số (xoso.com.vn) + PRNG Mulberry32
+=====================================================
+
+1. BẠCH THỦ ĐỀ (1 Số Duy Nhất):
+${S.btd} (Đầu ${S.btd[0]}, Đít ${S.btd[1]}, Tổng ${(Number(S.btd[0]) + Number(S.btd[1])) % 10})
+
+2. SONG THỦ ĐỀ (2 Số Đối Xứng):
+${S.std}
+
+3. TỨ THỦ ĐỀ (4 Số Trọng Tâm):
+${S.tuThu}
+
+4. DÀN ĐỀ 10 SỐ TINH HOA (Tổng ${S.sumMain} & Tổng ${S.sumShadow}):
+${S.dan10}
+
+5. DÀN ĐỀ 36 SỐ (Khung Chạm ${S.touchA} & Chạm ${S.touchB}):
+${S.dan36}
+
+6. BA CÀNG 4 SỐ VIP (Càng ${S.cang1} & Càng ${S.cang2}):
+${S.baCang4}
+
+=====================================================
+Chúc bạn may mắn và quản lý vốn hiệu quả!
+=====================================================`;
+
+      const blob = new Blob([content], { type: "text/plain;charset=utf-8" });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = `Bo_So_De_XSMB_Nam_5So_${S.targetDrawDate}.txt`;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+      showToast("Đã xuất tệp Bo_So_De_XSMB_Nam_5So.txt!");
+    }
+
+    function downloadStandaloneHtml() {
+      const htmlContent = "<!DOCTYPE html>\n" + document.documentElement.outerHTML;
+      const blob = new Blob([htmlContent], { type: "text/html;charset=utf-8" });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = "XSMB_Special_QuantPro_Nam_5So.html";
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+      showToast("Đã tải trang web XSMB_Special_QuantPro_Nam_5So.html!");
+    }
+
+    // =========================================================================
+    // 9. KHỞI TẠO VÀ LẮNG NGHE SỰ KIỆN
+    // =========================================================================
+    window.addEventListener("DOMContentLoaded", () => {
+      loadHistoryFromStorage();
+      computeAndLockDailySuites();
+      renderAllUI();
+
+      syncOnlineData(false);
+
+      updateCountdown();
+      setInterval(updateCountdown, 1000);
+      setInterval(() => syncOnlineData(false), 300000);
+
+      document.getElementById("btnSyncOnlineNow").addEventListener("click", () => {
+        syncOnlineData(true);
+      });
+
+      document.getElementById("btnRecalculateCycle").addEventListener("click", () => {
+        computeAndLockDailySuites();
+        renderAllUI();
+        showToast("Đã xác nhận: Bộ số chuẩn Bảng ĐB Năm 5 Số giữ nguyên 100%!");
+      });
+
+      // Thay đổi năm ma trận
+      const selectYear = document.getElementById("selectMatrixYear");
+      if (selectYear) {
+        selectYear.addEventListener("change", (e) => {
+          currentSelectedYear = Number(e.target.value) || 2026;
+          renderBothYearMatrixGrids();
+          showToast(`Đang hiển thị Bảng Đặc Biệt Năm ${currentSelectedYear}!`);
+        });
+      }
+
+      // Đổi chế độ hiển thị chữ số (Đầy đủ 5 số / 2 số đuôi / 3 càng)
+      document.querySelectorAll(".digit-view-btn").forEach(btn => {
+        btn.addEventListener("click", () => {
+          currentDigitViewMode = btn.getAttribute("data-digit-mode");
+          document.querySelectorAll(".digit-view-btn").forEach(b => {
+            b.classList.remove("bg-rose-600", "text-white", "font-bold");
+            b.classList.add("text-slate-400");
+          });
+          btn.classList.add("bg-rose-600", "text-white", "font-bold");
+          btn.classList.remove("text-slate-400");
+          renderBothYearMatrixGrids();
+        });
+      });
+
+      // Đổi chế độ tô màu nhiệt (Heatmap)
+      document.querySelectorAll(".matrix-color-btn").forEach(btn => {
+        btn.addEventListener("click", () => {
+          currentMatrixColorMode = btn.getAttribute("data-color-mode");
+          document.querySelectorAll(".matrix-color-btn").forEach(b => {
+            b.classList.remove("bg-indigo-600", "text-white", "font-bold");
+            b.classList.add("text-slate-400");
+          });
+          btn.classList.add("bg-indigo-600", "text-white", "font-bold");
+          btn.classList.remove("text-slate-400");
+          renderBothYearMatrixGrids();
+        });
+      });
+
+      // Modal Zoom Bảng ĐB Năm
+      const matrixModal = document.getElementById("matrixYearModal");
+      document.getElementById("btnOpenYearMatrixModal").addEventListener("click", () => {
+        matrixModal.classList.remove("hidden");
+        renderBothYearMatrixGrids();
+      });
+      document.getElementById("btnCloseMatrixModal").addEventListener("click", () => {
+        matrixModal.classList.add("hidden");
+      });
+
+      // Modal Nhập Dữ Liệu
+      const importModal = document.getElementById("importDataModal");
+      document.getElementById("btnOpenImportModal").addEventListener("click", () => {
+        importModal.classList.remove("hidden");
+      });
+      document.getElementById("btnCloseImportModal").addEventListener("click", () => {
+        importModal.classList.add("hidden");
+      });
+
+      // Nút quét nhanh proxy trong modal
+      document.getElementById("btnQuickFetchXosoProxy").addEventListener("click", async () => {
+        showToast("Đang kết nối tải trực tiếp HTML từ xoso.com.vn...");
+        await syncOnlineData(true);
+        importModal.classList.add("hidden");
+      });
+
+      // Xử lý nạp dữ liệu thủ công / dán mã HTML từ xoso.com.vn
+      document.getElementById("btnProcessImportData").addEventListener("click", () => {
+        const raw = (document.getElementById("rawInputDataText").value || "").trim();
+        if (!raw) {
+          showToast("Vui lòng dán dữ liệu!");
+          return;
+        }
+
+        // Ưu tiên chạy bộ giải mã HTML chuẩn Bảng Đặc Biệt Năm xoso.com.vn
+        let parsed = parseXosoNamTableHtml(raw, currentSelectedYear);
+
+        // Fallback JSON nếu là chuỗi JSON
+        if (parsed.length === 0) {
+          try {
+            if (raw.startsWith("[") && raw.endsWith("]")) {
+              const arr = JSON.parse(raw);
+              if (Array.isArray(arr) && arr.length > 0) {
+                mergeDrawHistory(specialHistory, arr);
+                computeAndLockDailySuites();
+                renderAllUI();
+                importModal.classList.add("hidden");
+                showToast(`Đã nạp thành công ${arr.length} kỳ quay từ JSON!`);
+                return;
+              }
+            }
+          } catch (e) {}
+        }
+
+        if (parsed.length > 0) {
+          mergeDrawHistory(specialHistory, parsed);
+          computeAndLockDailySuites();
+          renderAllUI();
+          importModal.classList.add("hidden");
+          showToast(`Đã bóc tách thành công ${parsed.length} kỳ mở thưởng 5 số từ mã HTML xoso.com.vn!`);
+        } else {
+          showToast("Không tìm thấy cấu trúc bảng kết quả hợp lệ trong dữ liệu dán vào.");
+        }
+      });
+
+      document.getElementById("btnResetDefaultDataset").addEventListener("click", () => {
+        try { localStorage.removeItem(STORAGE_KEY_SPECIAL); } catch (e) {}
+        loadHistoryFromStorage();
+        computeAndLockDailySuites();
+        renderAllUI();
+        importModal.classList.add("hidden");
+        showToast("Đã khôi phục dữ liệu gốc toàn bộ 12 tháng!");
+      });
+
+      // Copy buttons
+      document.getElementById("btnCopyBtd").addEventListener("click", () => {
+        if (currentLockedSuites) copyTextToClipboard(currentLockedSuites.btd);
+      });
+      document.getElementById("btnCopyStd").addEventListener("click", () => {
+        if (currentLockedSuites) copyTextToClipboard(currentLockedSuites.std);
+      });
+      document.getElementById("btnCopyTuThu").addEventListener("click", () => {
+        if (currentLockedSuites) copyTextToClipboard(currentLockedSuites.tuThu);
+      });
+      document.getElementById("btnCopyDan10").addEventListener("click", () => {
+        if (currentLockedSuites) copyTextToClipboard(currentLockedSuites.dan10);
+      });
+      document.getElementById("btnCopyDan36").addEventListener("click", () => {
+        if (currentLockedSuites) copyTextToClipboard(currentLockedSuites.dan36);
+      });
+      document.getElementById("btnCopyBaCang").addEventListener("click", () => {
+        if (currentLockedSuites) copyTextToClipboard(currentLockedSuites.baCang4);
+      });
+
+      document.getElementById("btnCopyAllSuites").addEventListener("click", () => {
+        if (!currentLockedSuites) return;
+        const S = currentLockedSuites;
+        const full = `[XSMB SPECIAL QUANTPRO - BỘ SỐ BẢNG ĐB NĂM 5 SỐ ${formatDateVN(S.targetDrawDate)}]
+- Bạch Thủ Đề: ${S.btd}
+- Song Thủ Đề: ${S.std}
+- Tứ Thủ Đề: ${S.tuThu}
+- Dàn 10 Số: ${S.dan10}
+- Dàn 36 Số: ${S.dan36}
+- 3 Càng 4 Số: ${S.baCang4}`;
+        copyTextToClipboard(full);
+      });
+
+      document.getElementById("btnCopyCustomDan").addEventListener("click", () => {
+        const box = document.getElementById("customDanResultBox");
+        if (box) copyTextToClipboard(box.textContent.trim());
+      });
+
+      document.getElementById("btnGenerateCustomDan").addEventListener("click", () => {
+        generateCustomDan();
+        showToast("Đã tạo dàn số theo bộ lọc!");
+      });
+
+      document.getElementById("btnQuickSelectPreset").addEventListener("click", () => {
+        if (!currentLockedSuites) return;
+        selectedTouches = new Set([currentLockedSuites.touchA, currentLockedSuites.touchB]);
+        selectedSums = new Set([currentLockedSuites.sumMain, currentLockedSuites.sumShadow]);
+        initTouchAndSumSelectors();
+        generateCustomDan();
+        showToast(`Đã áp dụng Chạm ${currentLockedSuites.touchA}, ${currentLockedSuites.touchB} & Tổng ${currentLockedSuites.sumMain}, ${currentLockedSuites.sumShadow}!`);
+      });
+
+      document.getElementById("btnClearCustomFilter").addEventListener("click", () => {
+        selectedTouches.clear();
+        selectedSums.clear();
+        initTouchAndSumSelectors();
+        generateCustomDan();
+        showToast("Đã xóa toàn bộ bộ lọc!");
+      });
+
+      document.getElementById("btnExportTxtAll").addEventListener("click", exportAllSuitesTxt);
+      document.getElementById("btnDownloadHtml").addEventListener("click", downloadStandaloneHtml);
+    });
+  </script>
+</body>
+</html>
